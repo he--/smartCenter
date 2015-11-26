@@ -19,6 +19,12 @@
             {% endif %}
         </div>
 
+        {% for flashMessage in app.session.flashbag.get('notice') %}
+
+        {{ flashMessage }}
+
+        {% endfor %}
+
 
         <form method="post">
             <div class="pull-right">
