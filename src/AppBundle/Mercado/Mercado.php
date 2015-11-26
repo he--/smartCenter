@@ -17,11 +17,17 @@ class Mercado
     private $filaItem;
 
     /**
+     * @var \SplStack;
+     */
+    private $promocoes;
+
+    /**
      *
      */
     public function __construct()
     {
-        $this->filaItem = new \SplDoublyLinkedList();
+        $this->filaItem     = new \SplDoublyLinkedList();
+        $this->promocoes    = new \SplStack();
     }
 
     /**
@@ -30,6 +36,28 @@ class Mercado
     public function cadastrarItem(Item $item)
     {
         $this->filaItem->push($item);
+    }
+
+    public function initEstoque()
+    {
+        $tvSony = new Item("Tv 42 polegadas sony", 2300.00);
+        $notDell = new Item("NoteBook Dell" , 1900.54);
+
+        $this->filaItem->push($tvSony);
+        $this->filaItem->push($notDell);
+
+        $this->promocoes->push("TV Sony de RS2300,00 por R$1999,99 ");
+
+    }
+
+    public function cadPromocao($promocao)
+    {
+        $this->promocoes->push($promocao);
+    }
+
+    public function promocao()
+    {
+        return $this->promocoes->pop();
     }
 
     /**
@@ -66,5 +94,23 @@ class Mercado
         $this->filaItem->unserialize($fp);
         fclose($fp);
     }
+
+    /**
+     * @return \SplDoublyLinkedList
+     */
+    public function getFilaItem()
+    {
+        return $this->filaItem;
+    }
+
+    /**
+     * @param \SplDoublyLinkedList $filaItem
+     */
+    public function setFilaItem($filaItem)
+    {
+        $this->filaItem = $filaItem;
+    }
+
+
 
 }
