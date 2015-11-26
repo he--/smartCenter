@@ -39,9 +39,10 @@ class Mercado
         $this->filaItem->push($tvSony);
         $this->filaItem->push($notDell);
 
+        $this->promocoes->push("TV Sony de RS2300,00 por R$1997,99 Na Casa do Jean !!!:)");
         $this->promocoes->push("TV Sony de RS2300,00 por R$1999,99 Magasine Luiza!!!");
-        $this->promocoes->push("TV Sony de RS2300,00 por R$1997,50 Lojas Carrefur !!!");
-        $this->promocoes->push("TV Sony de RS2300,00 por R$1123,99 Na Casa do Jean !!!:)");
+        $this->promocoes->push("TV Sony de RS2300,00 por R$1123,50 Lojas Carrefur !!!");
+
 
     }
 

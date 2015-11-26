@@ -25,6 +25,7 @@ class DefaultController extends Controller
             }
 
         } catch (\Exception $e) {
+            $mercado->initEstoque();
             $request->getSession()->getFlashBag()->add('notice', 'Não ha mais promoçõs!!!');
         }
 
