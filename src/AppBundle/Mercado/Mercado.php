@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: helio
- * Date: 25/11/15
- * Time: 18:38
- */
 
 namespace AppBundle\Mercado;
-
 
 class Mercado
 {

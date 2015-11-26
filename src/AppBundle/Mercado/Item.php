@@ -1,12 +1,7 @@
 <?php
 
 namespace AppBundle\Mercado;
-/**
- * Created by PhpStorm.
- * User: helio
- * Date: 25/11/15
- * Time: 18:36
- */
+
 class Item
 {
 
@@ -14,6 +9,10 @@ class Item
 
     private $preco;
 
+    /**
+     * @param $nome
+     * @param $preco
+     */
     public function __construct($nome, $preco)
     {
         $this->nome = $nome;
@@ -52,6 +51,4 @@ class Item
     {
         $this->preco = $preco;
     }
-
-
 }
